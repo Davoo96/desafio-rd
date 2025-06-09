@@ -17,7 +17,7 @@ O projeto envolve a implementação de um sistema de recomendação de produtos 
 
 Para resolver a questão, implementei os seguintes ajustes e funcionalidades:
 
-### 1. Serviço de Recomendações (`getRecommendations.js`)
+### 1. Serviço de Recomendações (`recommendation.service.js`)
 
 Criado um algoritmo de recomendação que:
 
