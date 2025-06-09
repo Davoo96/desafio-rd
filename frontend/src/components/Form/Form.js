@@ -30,7 +30,8 @@ function Form({ onRecommendationsChange }) {
 
   return (
     <form
-      className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md"
+      id="form"
+      className="grid grid-cols-1 lg:grid-cols-3 gap-4"
       onSubmit={handleSubmit}
     >
       <Preferences
@@ -50,7 +51,7 @@ function Form({ onRecommendationsChange }) {
           handleChange('selectedRecommendationType', selected)
         }
       />
-      <SubmitButton text="Obter recomendação" />
+      <SubmitButton className="lg:col-span-3" text="Obter recomendação" />
     </form>
   );
 }
