@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Sistema de Recomendação de Produtos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Anotações
 
-## Available Scripts
+Para executar o projeto, siga o README do root do monorepo.
 
-In the project directory, you can run:
+**Requisitos:**
 
-### `yarn start`
+- Node.js 18.3
+- Yarn para instalação de dependências
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Sobre o Projeto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O projeto envolve a implementação de um sistema de recomendação de produtos em uma aplicação web existente. O objetivo é desenvolver a funcionalidade central de recomendação de produtos dentro de uma aplicação React.js pré-existente, permitindo aos usuários selecionar preferências e receber recomendações de produtos correspondentes.
 
-### `yarn test`
+## Resolução
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para resolver a questão, implementei os seguintes ajustes e funcionalidades:
 
-### `yarn build`
+### 1. Serviço de Recomendações (`getRecommendations.js`)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Criado um algoritmo de recomendação que:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Recebe dados do formulário (preferências, características e tipo de recomendação)
+- Calcula pontuação para cada produto baseado nas correspondências
+- Filtra produtos sem pontuação
+- Ordena por pontuação (maior para menor) e por índice em caso de empate
+- Retorna produto único ou múltiplos produtos conforme selecionado
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Principais características:**
 
-### `yarn eject`
+- Sistema de pontuação baseado em correspondências de preferências e características
+- Suporte a recomendação única ou múltipla
+- Ordenação inteligente por relevância
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Componente de Formulário (`Form.js`)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Implementado formulário principal que:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Integra os campos de preferências, características e tipo de recomendação
+- Utiliza hooks customizados para gerenciamento de estado
+- Processa e envia dados para o serviço de recomendações
+- Comunica resultados para o componente pai
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Funcionalidades implementadas:**
 
-## Learn More
+- Gerenciamento centralizado do estado do formulário
+- Integração com sistema de recomendações
+- Layout responsivo com grid CSS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Aplicação Principal (`App.js`)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Estruturado componente raiz que:
 
-### Code Splitting
+- Gerencia estado global das recomendações
+- Implementa layout responsivo e atrativo
+- Integra formulário e lista de recomendações
+- Inclui hero section com call-to-action
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Melhorias visuais:**
 
-### Analyzing the Bundle Size
+- Design gradient para hero section
+- Layout responsivo para diferentes dispositivos
+- Navegação suave com scroll para formulário
+- Estilização consistente com tema da marca
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Funcionalidades Principais
 
-### Making a Progressive Web App
+- ✅ Sistema de recomendação baseado em preferências e características
+- ✅ Interface intuitiva para seleção de critérios
+- ✅ Recomendações em tempo real
+- ✅ Suporte a recomendação única ou múltipla
+- ✅ Design responsivo e moderno
+- ✅ Integração com dados de produtos existentes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Tecnologias Utilizadas
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React.js
+- Hooks customizados para gerenciamento de estado
+- Tailwind CSS para estilização
+- JavaScript ES6+

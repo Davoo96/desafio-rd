@@ -6,7 +6,7 @@ function App() {
   const [recommendations, setRecommendations] = useState([]);
 
   return (
-    <div className="bg-gray-100 flex flex-col justify-center items-center">
+    <div className="bg-gray-100 flex flex-col h-screen items-center">
       <div className="w-full text-center px-4 py-8 bg-gradient-to-t from-[#0A626B] to-[#001118]">
         <div className="max-w-[621px] mx-auto">
           <h1 className="text-white text-2xl lg:text-4xl font-bold mb-8">
